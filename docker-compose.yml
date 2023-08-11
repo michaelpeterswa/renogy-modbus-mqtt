@@ -4,5 +4,60 @@ version: "3.3"
 services:
   main:
     build: .
+    privileged: true # required for passing through /dev
     ports:
       - "8080:8080"
+    environment:
+      RMM_LOG_LEVEL: "debug"
+      RMM_MQTT_HOST: "mqtt:1883"
+      RMM_MQTT_USERNAME: ""
+      RMM_MQTT_PASSWORD: ""
+      RMM_MQTT_CLIENT_ID: "rmm"
+      RMM_MQTT_TOPIC: "asdf123"
+      # RMM_MODBUS_HOST: "/dev/ttyUSB0"
+      RMM_PULL_MODE: "redis"
+      RMM_PUSH_MODE: "mqtt"
+      RMM_REDIS_HOST: "redis:6379"
+      RMM_REDIS_PASSWORD: ""
+      RMM_REDIS_DB: "0"
+      RMM_REDIS_QUEUE_NAME: "data"
+      RMM_PULL_CRON: "* * * * *"
+    depends_on:
+      redis:
+        condition: service_healthy
+  mqtt:
+    image: eclipse-mosquitto
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./docker/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mosquitto_pub",
+          "-h",
+          "localhost",
+          "-t",
+          "healthcheck",
+          "-m",
+          "ok",
+        ]
+      interval: 3s
+      timeout: 10s
+      retries: 5
+  mqtt-explorer:
+    image: smeagolworms4/mqtt-explorer
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./docker/mqtt-explorer/settings.json:/mqtt-explorer/config/settings.json
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 10s
+      retries: 5
