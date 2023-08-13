@@ -168,6 +168,8 @@ github.com/matttproud/golang_protobuf_extensions v1.0.1 h1:4hp9jkHxhMHkqkrB3Ix0j
 github.com/matttproud/golang_protobuf_extensions v1.0.1/go.mod h1:D8He9yQNgCq6Z5Ld7szi9bcBfOoFv/3dc6xSMkL2PC0=
 github.com/michaelpeterswa/go-renogy-modbus v1.0.1 h1:0wCs1quiixMqbLiPrNqlXirg77XQnhGj1Vec9Rhs8CA=
 github.com/michaelpeterswa/go-renogy-modbus v1.0.1/go.mod h1:4UicTQPLkeBTBCtmsoJrOnPUA953JuELWfETJTgh8cE=
+github.com/michaelpeterswa/go-renogy-modbus v1.0.2 h1:EdgFljr+kLU1NcwuBTZgz29bzbNyXh7f66kfnsJ2+Ks=
+github.com/michaelpeterswa/go-renogy-modbus v1.0.2/go.mod h1:4UicTQPLkeBTBCtmsoJrOnPUA953JuELWfETJTgh8cE=
 github.com/mitchellh/copystructure v1.2.0 h1:vpKXTN4ewci03Vljg/q9QvCGUDttBOGBIa15WveJJGw=
 github.com/mitchellh/copystructure v1.2.0/go.mod h1:qLl+cE2AmVv+CoeAwDPye/v+N2HKCj9FbZEVFJRxO9s=
 github.com/mitchellh/mapstructure v1.5.0 h1:jeMsZIYE/09sWLaz43PL7Gy6RuMjD2eJVyuac5Z2hdY=

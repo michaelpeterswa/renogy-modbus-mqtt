@@ -4,7 +4,7 @@ version: "3.3"
 services:
   main:
     build: .
-    privileged: true # required for passing through /dev
+    privileged: true  # required for passing through /dev
     ports:
       - "8080:8080"
     environment:
