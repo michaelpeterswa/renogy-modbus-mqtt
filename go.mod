@@ -8,7 +8,7 @@ require (
 	github.com/gorilla/mux v1.8.0
 	github.com/knadh/koanf/providers/env v0.1.0
 	github.com/knadh/koanf/v2 v2.0.1
-	github.com/michaelpeterswa/go-renogy-modbus v1.0.2
+	github.com/michaelpeterswa/go-renogy-modbus v1.0.3
 	github.com/prometheus/client_golang v1.12.2
 	github.com/robfig/cron/v3 v3.0.0
 	go.uber.org/zap v1.20.0
