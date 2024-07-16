@@ -15,8 +15,9 @@ const (
 	MQTTPassword = "mqtt.password"
 	MQTTClientID = "mqtt.client.id"
 
-	MQTTTopic  = "mqtt.topic"
-	ModBusHost = "modbus.host"
+	MQTTTopic         = "mqtt.topic"
+	ModBusHost        = "modbus.host"
+	ModBusIdleTimeout = "modbus.idle.timeout"
 
 	PullMode = "pull.mode"
 	PushMode = "push.mode"

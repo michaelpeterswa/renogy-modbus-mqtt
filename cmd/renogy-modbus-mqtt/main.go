@@ -70,7 +70,7 @@ func main() {
 		if err != nil {
 			logger.Fatal("could not init modbus logger", zap.Error(err))
 		}
-		modbusClient, err = gorenogymodbus.NewModbusClient(modbusLogger, k.String(config.ModBusHost))
+		modbusClient, err = gorenogymodbus.NewModbusClient(modbusLogger, k.String(config.ModBusHost), k.Duration(config.ModBusIdleTimeout))
 		if err != nil {
 			logger.Fatal("could not init modbus client", zap.Error(err))
 		}
