@@ -1,6 +1,6 @@
 # -=-=-=-=-=-=- Compile Image -=-=-=-=-=-=-
 
-FROM --platform=$BUILDPLATFORM golang:1 AS stage-compile
+FROM --platform=$BUILDPLATFORM golang:1-alpine AS stage-compile
 
 WORKDIR /go/src/app
 COPY . .
