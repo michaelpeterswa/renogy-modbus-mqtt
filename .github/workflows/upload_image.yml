@@ -48,7 +48,7 @@ jobs:
           provenance: true
           context: .
           file: Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/armel
+          platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/armhf
           build-args: |
             VERSION=${{ steps.meta.outputs.version }}
           tags: ${{ steps.meta.outputs.tags }}
