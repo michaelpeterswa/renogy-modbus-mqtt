@@ -12,7 +12,7 @@ RUN go get -d -v ./... && CGO_ENABLED=0 GOOS=linux go build ./cmd/renogy-modbus-
 
 # -=-=-=-=- Final Distroless Image -=-=-=-=-
 
-FROM alpine:3 AS stage-final
+FROM debian:bookworm-slim AS stage-final
 
 COPY --from=stage-compile /go/src/app/renogy-modbus-mqtt /
 CMD ["/renogy-modbus-mqtt"]
