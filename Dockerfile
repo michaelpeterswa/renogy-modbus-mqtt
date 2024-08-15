@@ -5,6 +5,9 @@ FROM --platform=$BUILDPLATFORM golang:1-alpine AS stage-compile
 WORKDIR /go/src/app
 COPY . .
 
+ARG TARGETARCH
+ENV GOARCH=$TARGETARCH
+
 RUN go get -d -v ./... && CGO_ENABLED=0 GOOS=linux go build ./cmd/renogy-modbus-mqtt
 
 # -=-=-=-=- Final Distroless Image -=-=-=-=-
